@@ -1,20 +1,19 @@
-/* Importar fuentes futuristas */
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;600&display=swap');
 
 :root {
-    --primary-bg: #0A0A0A; /* Fondo negro puro */
-    --secondary-bg: #131417; /* Fondo gris oscuro */
-    --text-color: #FFFFFF; /* Blanco puro para mayor contraste */
-    --title-color: #00D1FF; /* Azul Neón */
-    --subtitle-color: #A855F7; /* Morado vibrante pero más sobrio */
-    --highlight-color: #00FFA3; /* Verde Neón */
-    --hover-color: #0090C1; /* Azul más oscuro */
+    --primary-bg: #0A0A0A;
+    --secondary-bg: #131417; 
+    --text-color: #FFFFFF; 
+    --title-color: #00D1FF; 
+    --subtitle-color: #A855F7; 
+    --highlight-color: #00FFA3; 
+    --hover-color: #0090C1; 
     --shadow-light: rgba(0, 209, 255, 0.5);
     --font-main: 'Orbitron', sans-serif;
     --font-sec: 'Rajdhani', sans-serif;
 }
 
-/* Estilo General */
 body {
     font-family: var(--font-sec);
     background: var(--primary-bg);
@@ -24,7 +23,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Encabezado */
 header {
     background: linear-gradient(90deg, var(--secondary-bg), var(--primary-bg));
     padding: 25px;
@@ -40,21 +38,13 @@ header h1 {
     text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.2);
 }
 
-/* Títulos secundarios */
 h2 {
     color: var(--text-color);
     font-family: var(--font-main);
     text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1);
 }
 
-/* Destacar textos importantes */
-.highlight {
-    color: var(--highlight-color);
-    font-weight: bold;
-    text-shadow: 0px 0px 10px var(--highlight-color);
-}
 
-/* Barra de navegación */
 nav ul {
     list-style: none;
     padding: 0;
@@ -81,7 +71,6 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Secciones */
 section {
     margin: 50px auto;
     padding: 30px;
@@ -90,15 +79,43 @@ section {
     width: 60%;
     box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    animation: fadeIn 1.5s ease-in-out;
+    animation: fadeIn 1.5s ease-in-out, floatEffect 3s infinite alternate ease-in-out;
 }
 
 section:hover {
     transform: scale(1.02);
-    box-shadow: 0px 6px 25px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.2);
 }
 
-/* Inputs y botones */
+.barra {
+    width: 100%;
+    height: 30px;
+    background: #ddd;
+    border-radius: 15px;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.barra-progreso {
+    height: 100%;
+    background: #00FFA3;
+    width: 0%;
+    position: absolute;
+    transition: width 2s ease-in-out;
+}
+
+.progreso-texto {
+    position: absolute;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2em;
+    left: 50%;
+    top: 5px;
+    transform: translateX(-50%);
+    transition: left 2s ease-in-out;
+}
+
 input, button {
     display: block;
     width: 85%;
@@ -111,7 +128,6 @@ input, button {
     transition: 0.3s ease;
 }
 
-/* Estilos para input */
 input {
     background: var(--secondary-bg);
     color: var(--text-color);
@@ -124,7 +140,6 @@ input:focus {
     box-shadow: 0px 0px 10px var(--highlight-color);
 }
 
-/* Estilos para botón */
 button {
     background: var(--hover-color);
     color: white;
@@ -140,9 +155,9 @@ button:hover {
     background: var(--title-color);
     transform: scale(1.05);
     box-shadow: 0px 0px 20px var(--shadow-light);
+    animation: pulse 1s infinite alternate;
 }
 
-/* Pie de página */
 footer {
     background: var(--secondary-bg);
     padding: 15px;
@@ -151,13 +166,21 @@ footer {
     font-size: 0.9em;
 }
 
-/* Animaciones */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsividad */
+@keyframes floatEffect {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
 @media (max-width: 768px) {
     section {
         width: 90%;
@@ -173,3 +196,4 @@ footer {
         margin: 10px 0;
     }
 }
+
