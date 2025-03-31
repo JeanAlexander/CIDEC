@@ -1,1 +1,78 @@
-<h1> TEST PRUEBA</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defensa Civil - Espinar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fondo de partículas -->
+    <div id="particles-js"></div>
+
+    <header>
+        <h1>Municipalidad Provincial de Espinar</h1>
+        <h2>Oficina de Gestión del Riesgo de Desastres</h2>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#citas">Cita en la Oficina</a></li>
+            <li><a href="#inspecciones">Inspección a Local</a></li>
+            <li><a href="#seguimiento">Seguimiento de Trámite</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section id="inicio">
+        <h2>🌍 La Prevención es la Mejor Solución</h2>
+        <p>Desde la Oficina de Defensa Civil, garantizamos la seguridad y prevención de desastres en nuestra provincia.</p>
+    </section>
+
+    <section id="citas">
+        <h2>📅 Programar Cita en la Oficina</h2>
+        <form id="formCita">
+            <input type="text" id="nombreCita" placeholder="Nombre completo" required>
+            <input type="text" id="dniCita" placeholder="DNI" required pattern="\d{8}">
+            <input type="email" id="correoCita" placeholder="Correo electrónico" required>
+            <input type="date" id="fechaCita" required>
+            <button type="submit">Solicitar Cita</button>
+        </form>
+        <p id="codigoCita"></p>
+    </section>
+
+    <section id="inspecciones">
+        <h2>🏠 Solicitar Inspección a Local</h2>
+        <form id="formInspeccion">
+            <input type="text" id="codigoCitaInspeccion" placeholder="Código de cita" required>
+            <input type="text" id="nombreInspeccion" placeholder="Nombre completo" required>
+            <input type="text" id="direccion" placeholder="Dirección exacta" required>
+            <input type="text" id="tipo" placeholder="Tipo de inspección (estructura, riesgo...)" required>
+            <textarea id="detalle" placeholder="Detalles adicionales sobre la inspección" rows="4"></textarea>
+            <button type="submit">Enviar Solicitud</button>
+        </form>
+        <p id="codigoInspeccion"></p>
+    </section>
+
+    <section id="seguimiento">
+        <h2>🔍 Seguimiento de Trámite</h2>
+        <form id="formSeguimiento">
+            <input type="text" id="numeroRegistro" placeholder="Ingrese N° de Registro de Inspección" required>
+            <button type="submit">Consultar Estado</button>
+        </form>
+        <p id="resultadoSeguimiento"></p>
+    </section>
+
+    <footer id="contacto">
+        <p>📍 Dirección: Plaza de Armas, Espinar - Cusco</p>
+        <p>📞 Teléfono: (084) 123456 - ✉️ Email: defensa.civil@espinar.gob.pe</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+</body>
+</html>
