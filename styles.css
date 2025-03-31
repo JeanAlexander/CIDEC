@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;600&display=swap');
 
 :root {
-    --primary-bg: #0A0A0A;
+        --primary-bg: #0A0A0A;
     --secondary-bg: #131417; 
     --text-color: #FFFFFF; 
-    --title-color: #00D1FF; 
+    --title-color: #f38c0d; 
     --subtitle-color: #A855F7; 
     --highlight-color: #00FFA3; 
-    --hover-color: #0090C1; 
-    --shadow-light: rgba(0, 209, 255, 0.5);
+    --hover-color: #ff8b17; 
+    --shadow-light: rgba(236, 144, 15, 0.804);  
     --font-main: 'Orbitron', sans-serif;
     --font-sec: 'Rajdhani', sans-serif;
     /*
