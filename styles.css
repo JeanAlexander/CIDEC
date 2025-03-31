@@ -1,18 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+/* Importar fuentes futuristas */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;600&display=swap');
 
 :root {
-    --primary-bg: #0A0A0A;
-    --secondary-bg: #131417;
-    --text-color: #FFFFFF;
-    --title-color: #00D1FF;
-    --highlight-color: #00FFA3;
-    --hover-color: #0090C1;
+    --primary-bg: #0A0A0A; /* Fondo negro puro */
+    --secondary-bg: #131417; /* Fondo gris oscuro */
+    --text-color: #FFFFFF; /* Blanco puro para mayor contraste */
+    --title-color: #00D1FF; /* Azul Neón */
+    --subtitle-color: #A855F7; /* Morado vibrante pero más sobrio */
+    --highlight-color: #00FFA3; /* Verde Neón */
+    --hover-color: #0090C1; /* Azul más oscuro */
     --shadow-light: rgba(0, 209, 255, 0.5);
     --font-main: 'Orbitron', sans-serif;
+    --font-sec: 'Rajdhani', sans-serif;
 }
 
+/* Estilo General */
 body {
-    font-family: var(--font-main);
+    font-family: var(--font-sec);
     background: var(--primary-bg);
     color: var(--text-color);
     margin: 0;
@@ -20,52 +24,153 @@ body {
     overflow-x: hidden;
 }
 
-/* Fondo de partículas */
-#particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: var(--primary-bg);
-    z-index: -1;
+/* Encabezado */
+header {
+    background: linear-gradient(90deg, var(--secondary-bg), var(--primary-bg));
+    padding: 25px;
+    box-shadow: 0px 4px 20px var(--shadow-light);
+    animation: fadeIn 1s ease-in-out;
+    text-align: center;
 }
 
-/* Animaciones */
-@keyframes slideIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+header h1 {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    font-size: 2.2rem;
+    text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.2);
 }
 
-@keyframes glowEffect {
-    0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
-    50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.6); }
-    100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+/* Títulos secundarios */
+h2 {
+    color: var(--text-color);
+    font-family: var(--font-main);
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1);
 }
 
-h1, h2 {
-    animation: glowEffect 2s infinite alternate;
+/* Destacar textos importantes */
+.highlight {
+    color: var(--highlight-color);
+    font-weight: bold;
+    text-shadow: 0px 0px 10px var(--highlight-color);
 }
 
+/* Barra de navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    background: var(--secondary-bg);
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    box-shadow: 0px 4px 10px var(--shadow-light);
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.3em;
+    transition: color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+    color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+/* Secciones */
 section {
-    animation: slideIn 1s ease-in-out;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    width: 60%;
+    box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Botones */
+section:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Inputs y botones */
+input, button {
+    display: block;
+    width: 85%;
+    margin: 12px auto;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+/* Estilos para input */
+input {
+    background: var(--secondary-bg);
+    color: var(--text-color);
+    border: 1px solid var(--title-color);
+    text-align: center;
+}
+
+input:focus {
+    border-color: var(--highlight-color);
+    box-shadow: 0px 0px 10px var(--highlight-color);
+}
+
+/* Estilos para botón */
 button {
     background: var(--hover-color);
     color: white;
     font-size: 1.1em;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
     box-shadow: 0px 0px 15px var(--shadow-light);
+    font-family: var(--font-main);
+    letter-spacing: 1px;
 }
 
 button:hover {
     background: var(--title-color);
     transform: scale(1.05);
+    box-shadow: 0px 0px 20px var(--shadow-light);
 }
 
-/* Efecto de botón presionado */
-button:active {
-    transform: scale(0.95);
-    box-shadow: 0px 0px 10px var(--highlight-color);
+/* Pie de página */
+footer {
+    background: var(--secondary-bg);
+    padding: 15px;
+    color: var(--text-color);
+    margin-top: 50px;
+    font-size: 0.9em;
 }
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    section {
+        width: 90%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
