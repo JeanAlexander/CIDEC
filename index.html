@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Defensa Civil - Espinar</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="fade-in">
         <h1>Municipalidad Provincial de Espinar</h1>
         <h2>Oficina de Gestión del Riesgo de Desastres</h2>
     </header>
     
-    <nav>
+    <nav class="fade-in">
         <ul>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#citas">Cita en la Oficina</a></li>
@@ -25,13 +25,13 @@
     
     <div class="background-animation"></div>
     
-    <section id="inicio">
+    <section id="inicio" class="fade-in">
         <h2>La Prevención es la Mejor Solución</h2>
         <p>Desde la Oficina de Defensa Civil, garantizamos la seguridad y prevención de desastres en nuestra provincia.</p>
         <img src="img01.jpg" alt="Diseño 1" width="35%">
     </section>
 
-    <section id="citas">
+    <section id="citas" class="fade-in">
         <h2>📅 Programar Cita en la Oficina</h2>
         <form id="formCita">
             <input type="text" id="nombreCita" placeholder="Nombre completo" required>
@@ -43,7 +43,7 @@
         <p id="codigoCita"></p>
     </section>
 
-    <section id="inspecciones">
+    <section id="inspecciones" class="fade-in">
         <h2>🏠 Solicitar Inspección a Local</h2>
         <form id="formInspeccion">
             <input type="text" id="codigoCitaInspeccion" placeholder="Código de cita" required>
@@ -56,21 +56,42 @@
         <p id="codigoInspeccion"></p>
     </section>
 
-    <section id="seguimiento">
+    <section id="seguimiento" class="fade-in">
         <h2>🔍 Seguimiento de Trámite</h2>
         <form id="formSeguimiento">
             <input type="text" id="numeroRegistro" placeholder="Ingrese N° de Registro de Inspección" required>
             <button type="submit">Consultar Estado</button>
         </form>
-        <p id="resultadoSeguimiento"></p>
+        <p id="resultadoSeguimiento">Ejemplo de N° de Registro: T12345</p>
+
+        <!-- Barra de progreso -->
+        <div id="barraProgresoContainer" style="display: none;">
+            <h3>Estado del Trámite</h3>
+            <p id="informacionTramite"></p>
+            <p id="nombreLocal">Local: IE Sagrado Corazón de Jesús</p>
+            <p id="directorLocal">Director: Juan Pérez</p>
+            <p id="fechaSolicitud">Fecha de solicitud: 2025-03-31</p>
+            <p id="estadoTramite">Estado: Inspección realizada, en evaluación.</p>
+            <p id="mensajeApersonarse">Apersonarse a la oficina el 5 de abril de 2025 para recoger su ITSE impreso.</p>
+            <div class="barra">
+                <div id="barraProgreso" class="barra-progreso"></div>
+                <div id="progresoTexto" class="progreso-texto">0%</div>
+            </div>
+        </div>
     </section>
 
-    <footer id="contacto">
+    <footer id="contacto" class="fade-in">
         <p>📍 Dirección: Plaza de Armas, Espinar - Cusco</p>
+        <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d748.1218671677454!2d-71.41349911875992!3d-14.792757605612389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9169104726d4bfe9%3A0x3ad2713a5f712818!2sMunicipalidad%20Provincial%20de%20Espinar!5e1!3m2!1ses!2spe!4v1743437446591!5m2!1ses!2sp" 
+    width="600" 
+    height="450" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+    </iframe>
         <p>📞 Teléfono: (084) 123456 - ✉️ Email: defensa.civil@espinar.gob.pe</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
-    
